@@ -1,3 +1,4 @@
+require 'pry'
 class Student
 attr_accessor :name, :grade
 attr_reader :id
@@ -29,6 +30,7 @@ def self.create_table
      INSERT INTO students (name, grade)
      VALUES (?, ?)
      SQL
+     binding.pry
      DB[:conn].execute(sql, self.name, self.grade)
    end
 
